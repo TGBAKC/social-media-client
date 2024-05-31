@@ -11,8 +11,16 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/compat": "^1.0.3",
+    "@eslint/js": "^9.4.0",
+    "eslint": "^9.3.0",
+    "eslint-plugin-react": "^7.34.2",
+    "globals": "^15.3.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
     "live-server": "^1.2.2",
-    "sass": "^1.54.8"
+    "sass": "^1.54.8",
+    "typescript-eslint": "^7.11.0"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
