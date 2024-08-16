@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "css-frameworks-ca",
   "version": "1.0.0",
   "description": "Test",
