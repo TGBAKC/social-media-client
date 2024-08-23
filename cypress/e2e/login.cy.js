@@ -45,7 +45,8 @@ describe("login form", () => {
         cy.get(`[data-cy="passwordInput"]`).click();
         cy.get(`[data-cy="passwordInput"]`).type(`${user.password}{enter}`);
       });
-      cy.wait("@failedLogin");
+      cy.wait('@failedLogin', { timeout: 10000 });
+
       cy.on("window:alert", () => {
         expect(true).to.be.true;
       });

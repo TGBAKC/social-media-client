@@ -95,6 +95,7 @@
 								pattern="[\w\-.]+@(stud.)?noroff.no$"
 								title="Only Noroff student or teacher emails are valid."
 								placeholder="name@example.com"
+								data-cy="emailInput" 
 							/>
 							<label for="loginEmail">Email address</label>
 						</div>
@@ -107,6 +108,7 @@
 								id="loginPassword"
 								name="password"
 								placeholder="Password"
+								  data-cy="passwordInput"
 							/>
 							<label for="loginPassword">Password</label>
 						</div>
@@ -123,7 +125,8 @@
 						>
 							Register
 						</button>
-						<button type="submit" class="btn btn-success">Login</button>
+						<button type="submit" class="btn btn-success" id="loginFormBtn" data-cy="loginFormBtn">Login</button>
+
 					</div>
 				</form>
 			</div>

@@ -6,6 +6,5 @@ export default defineConfig({
     setupNodeEvents() {
       // implement node event listeners here
     },
-    supportFile: "cypress/support/e2e.js", // Support dosyasını belirtin
   },
 });
