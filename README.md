@@ -34,7 +34,7 @@
 
 2.Install the dependencies
 
-[Link Metni](https://example.com)
+[npm install]
 
 
 # Running 
