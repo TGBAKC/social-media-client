@@ -15,7 +15,15 @@ function authGuard(callback = () => {}, view = "") {
 		if (view) {
 			location.href = `./`;
 		}
-		document.querySelector("[data-auth=register]").click();
+		document.addEventListener("DOMContentLoaded", function() {
+			const registerButton = document.querySelector("[data-auth=register]");
+			if (registerButton) {
+			  registerButton.click();
+			} else {
+			  console.error("Register button not found");
+			}
+		  });
+		  
 		const message = document.createElement("div");
 		message.classList.add("alert", "alert-warning");
 		message.innerText = "Please register or login to view this page.";
