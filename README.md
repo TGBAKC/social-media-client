@@ -24,3 +24,28 @@
 -Prettier
 
 -ESlint
+
+# Getting Started
+---
+1.Clone the repo
+
+[GitHub](https://github.com)
+
+
+2.Install the dependencies
+
+[Link Metni](https://example.com)
+
+
+# Running 
+
+To run the app, run the following command:
+
+[`npm run start`]
+
+
+# Testing
+
+To perform tests, run the following command:
+
+[`npm run test`]
