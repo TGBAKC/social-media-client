@@ -25,32 +25,33 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add("interceptSuccess", () => {
-    cy.intercept("POST", "https://nf-api.onrender.com/api/v1/social/auth/login", {
-      statusCode: 200,
-      body: {
-        name: "testcypress",
-        email: "testcypress@stud.noroff.no",
-        banner: null,
-        avatar: "",
-        accessToken: "fake-token",
-      },
-    }).as("loginReq");
+  cy.intercept("POST", "https://nf-api.onrender.com/api/v1/social/auth/login", {
+    statusCode: 200,
+    body: {
+      name: "testcypress",
+      email: "testcypress@stud.noroff.no",
+      banner: null,
+      avatar: "",
+      accessToken: "fake-token",
+    },
+  }).as("loginReq");
+});
+
+Cypress.Commands.add("visitPage", () => {
+  cy.visit("/");
+  cy.wait(500);
+});
+
+Cypress.Commands.add("logoutFn", () => {
+  cy.get('[data-cy="logoutBtn"]', { timeout: 1000 }).should("be.visible");
+  cy.get(`[data-cy="logoutBtn"]`).click({ force: true });
+  cy.location("pathname").should("eq", "/");
+});
+
+Cypress.Commands.add("getCredentials", () => {
+  cy.get("@credentials").then((user) => {
+    cy.get(`[data-cy="emailInput"]`).type(`${user.email}`);
+    cy.get(`[data-cy="passwordInput"]`).click();
+    cy.get(`[data-cy="passwordInput"]`).type(`${user.password}{enter}`);
   });
-  
-  Cypress.Commands.add("visitPage", () => {
-    cy.visit("/");
-    cy.wait(500);
-  });
-  
-  Cypress.Commands.add("logoutFn", () => {
-    cy.get(`[data-cy="logoutBtn"]`).click({ force: true });
-    cy.location("pathname").should("eq", "/");
-  });
-  
-  Cypress.Commands.add("getCredentials", () => {
-    cy.get("@credentials").then((user) => {
-      cy.get(`[data-cy="emailInput"]`).type(`${user.email}`);
-      cy.get(`[data-cy="passwordInput"]`).click();
-      cy.get(`[data-cy="passwordInput"]`).type(`${user.password}{enter}`);
-    });
-  });
+});
