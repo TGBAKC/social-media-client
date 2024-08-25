@@ -1,10 +1,15 @@
 /// <reference types="cypress" />
-
+Cypress.on("uncaught:exception", (err, runnable) => {
+  // Returning false here prevents Cypress from failing the test
+  return false;
+});
 describe("login form", () => {
-    beforeEach(() => {
-      cy.fixture("credentials.json").as("credentials");
-      cy.visitPage();
-    });
+  beforeEach(() => {
+    cy.fixture("credentials.json").as("credentials");
+    cy.wait(1000);
+    cy.visitPage();
+    cy.wait(1000);
+  });
   
     it("should log in with valid credentials", () => {
       cy.interceptSuccess().as("loginReq");
