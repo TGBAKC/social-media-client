@@ -29,7 +29,7 @@
 ---
 1.Clone the repo
 
-[GitHub](https://github.com)
+[https://github.com/TGBAKC/social-media-client.git]
 
 
 2.Install the dependencies
